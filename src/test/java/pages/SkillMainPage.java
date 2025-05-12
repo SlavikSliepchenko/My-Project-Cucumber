@@ -41,4 +41,9 @@ public class SkillMainPage {
 
         return new DashboardPage(context);
     }
+
+    public void submitEmptyLoginForm() {
+        context.wait.until(ExpectedConditions.visibilityOfElementLocated(loginButton));
+        context.driver.findElement(loginButton).click();
+    }
 }
