@@ -8,13 +8,13 @@ public class ConfigurationReader {
     private static final Properties properties = new Properties();
 
     static {
-        try (InputStream input = ConfigurationReader.class.getClassLoader().getResourceAsStream("config.properties")) {
+        try (InputStream input = ConfigurationReader.class.getClassLoader().getResourceAsStream("configuration.properties")) {
             if (input == null) {
-                throw new RuntimeException("Не найден файл config.properties в classpath");
+                throw new RuntimeException("Не найден файл configuration.properties в classpath");
             }
             properties.load(input);
         } catch (IOException ex) {
-            throw new RuntimeException("Ошибка загрузки config.properties: " + ex.getMessage());
+            throw new RuntimeException("Ошибка загрузки configuration.properties: " + ex.getMessage());
         }
     }
 
