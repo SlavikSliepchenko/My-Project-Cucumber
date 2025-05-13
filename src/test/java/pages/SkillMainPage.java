@@ -37,7 +37,7 @@ public class SkillMainPage {
         enterPassword(ConfigurationReader.get("userPassword"));
         clickLoginButton();
 
-        context.wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h1")));
+        context.wait.until(ExpectedConditions.urlContains("/dashboard"));
 
         return new DashboardPage(context);
     }

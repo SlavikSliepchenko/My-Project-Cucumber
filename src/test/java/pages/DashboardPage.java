@@ -9,7 +9,7 @@ public class DashboardPage {
     private final TestContext context;
 
     private final By logoutButton = By.xpath("//button[.//span[text()='Выйти']]");
-    private final By header = By.tagName("h1");
+    private final By header = By.xpath("//h1[contains(text(), 'Панель управления')]");
     private final By testsSectionButton = By.xpath("//a[@href='/dashboard/tests']//div[contains(text(), 'Тесты')]");
     private final By candidatesSectionButton = By.xpath("//a[@href='/dashboard/candidates']//div[contains(text(), 'Кандидаты')]");
     private final By settingsSectionButton = By.xpath("//a[@href='/dashboard/settings']//div[contains(text(), 'Настройки')]");
@@ -19,6 +19,7 @@ public class DashboardPage {
     }
 
     public String getHeaderText() {
+        context.wait.until(ExpectedConditions.visibilityOfElementLocated(header));
         return context.driver.findElement(header).getText();
     }
 
