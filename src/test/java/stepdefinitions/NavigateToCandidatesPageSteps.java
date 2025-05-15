@@ -11,7 +11,6 @@ import static utils.ConfigurationReader.get;
 
 public class NavigateToCandidatesPageSteps {
     private final TestContext context;
-    private SkillMainPage loginPage;
     private DashboardPage dashboardPage;
 
     public NavigateToCandidatesPageSteps(TestContext context) {
@@ -21,7 +20,7 @@ public class NavigateToCandidatesPageSteps {
     @When("I log in and open the Candidates section")
     public void iLogInAndOpenCandidatesSection() {
         context.driver.get(get("url"));
-        loginPage = new SkillMainPage(context);
+        SkillMainPage loginPage = new SkillMainPage(context);
         dashboardPage = loginPage.login();
         dashboardPage.openCandidatesSection();
     }

@@ -15,6 +15,8 @@ public class Hooks {
     @Before
     public void setUp() {
 
+        System.out.println("Start test");
+
     }
 
     @After
@@ -22,3 +24,4 @@ public class Hooks {
         context.cleanUp();
     }
 }
+

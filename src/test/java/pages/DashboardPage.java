@@ -1,8 +1,13 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import utils.TestContext;
+
+import static utils.DriverFactory.driver;
 
 public class DashboardPage {
 
@@ -45,5 +50,20 @@ public class DashboardPage {
     public void openSettingsSection() {
         context.wait.until(ExpectedConditions.elementToBeClickable(settingsSectionButton));
         context.driver.findElement(settingsSectionButton).click();
+    }
+
+    public void clickCandidateByName(String fullName) {
+        By candidateLink = By.xpath("//a[text()='" + fullName + "']");
+        context.wait.until(ExpectedConditions.elementToBeClickable(candidateLink)).click();
+    }
+
+    public boolean isCandidatePresent(String fullName) {
+        try {
+            String xpath = "//a[contains(@href, '/dashboard/candidates') and contains(normalize-space(.), \"" + fullName + "\")]";
+            WebElement element = context.wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+            return element.isDisplayed();
+        } catch (TimeoutException | NoSuchElementException e) {
+            return false;
+        }
     }
 }
