@@ -49,7 +49,7 @@ public class CandidatePage {
 
     public void clickCreateButton() {
         try {
-            System.out.println(" кнопкa 'Добавить кандидата' во всплывающем меню...");
+            System.out.println("Кнопкa 'Добавить кандидата' во всплывающем меню...");
             context.wait.until(ExpectedConditions.elementToBeClickable(submitCandidateButton));
 
             boolean isEnabled = context.driver.findElement(submitCandidateButton).isEnabled();

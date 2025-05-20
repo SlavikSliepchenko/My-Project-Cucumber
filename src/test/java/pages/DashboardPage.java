@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import utils.TestContext;
 
-import static utils.DriverFactory.driver;
 
 public class DashboardPage {
 
