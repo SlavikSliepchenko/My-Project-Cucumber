@@ -15,9 +15,9 @@ public class DashboardPage {
 
     private final By logoutButton = By.xpath("//button[.//span[text()='Выйти']]");
     private final By header = By.xpath("//h1[contains(text(), 'Панель управления')]");
-    private final By testsSectionButton = By.xpath("//a[@href='/dashboard/tests']//div[contains(text(), 'Тесты')]");
-    private final By candidatesSectionButton = By.xpath("//a[@href='/dashboard/candidates']//div[contains(text(), 'Кандидаты')]");
-    private final By settingsSectionButton = By.xpath("//a[@href='/dashboard/settings']//div[contains(text(), 'Настройки')]");
+    private final By testsSectionButton = By.xpath("//div[contains(text(), 'Тесты')]");
+    private final By candidatesSectionButton = By.xpath("//div[contains(text(), 'Кандидаты')]");
+    private final By settingsSectionButton = By.xpath("//div[contains(text(), 'Настройки')]");
 
     public DashboardPage(TestContext context) {
         this.context = context;
