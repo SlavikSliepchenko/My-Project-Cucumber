@@ -1,7 +1,5 @@
 package stepdefinitions;
 
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -49,22 +47,4 @@ public class CandidateProfileTestSteps {
         assertEquals(expectedPosition, candidatePage.getPosition());
     }
 
-    public static class Hooks {
-
-        private final TestContext context;
-
-        public Hooks(TestContext context) {
-            this.context = context;
-        }
-
-        @Before
-        public void setUp() {
-
-        }
-
-        @After
-        public void tearDown() {
-            context.cleanUp();
-        }
-    }
 }

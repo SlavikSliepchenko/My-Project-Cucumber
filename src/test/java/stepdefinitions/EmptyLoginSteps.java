@@ -26,11 +26,9 @@ public class EmptyLoginSteps {
 
     @Then("I should see validation messages for username and password")
     public void iShouldSeeValidationMessages() {
-        WebElement usernameError = context.wait.until(
-                ExpectedConditions.visibilityOfElementLocated(
+        WebElement usernameError = context.wait.until(ExpectedConditions.visibilityOfElementLocated(
                         By.xpath("//*[text()='Некорректная электронная почта']")));
-        WebElement passwordError = context.wait.until(
-                ExpectedConditions.visibilityOfElementLocated(
+        WebElement passwordError = context.wait.until(ExpectedConditions.visibilityOfElementLocated(
                         By.xpath("//*[text()='Пароль обязателен']")));
 
         assertTrue("Ожидалась ошибка под полем логина", usernameError.isDisplayed());

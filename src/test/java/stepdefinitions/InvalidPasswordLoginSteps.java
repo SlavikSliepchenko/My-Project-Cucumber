@@ -31,8 +31,7 @@ public class InvalidPasswordLoginSteps {
     @Then("I should see an error message {string}")
     public void verifyErrorMessage(String expectedMessage) {
         WebElement errorHeader = context.wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//div[contains(@class, 'font-semibold') and text()='" + expectedMessage + "']")
-        ));
+                By.xpath("//div[contains(@class, 'font-semibold') and text()='" + expectedMessage + "']")));
         assertTrue("Ожидалось сообщение об ошибке: " + expectedMessage, errorHeader.isDisplayed());
     }
 }

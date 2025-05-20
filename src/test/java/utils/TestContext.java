@@ -18,4 +18,7 @@ public class TestContext {
         DriverFactory.quitDriver();
     }
 
+    public String getUrl() {
+        return ConfigurationReader.get("url");
+    }
 }

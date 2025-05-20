@@ -9,7 +9,7 @@ import utils.TestContext;
 public class SkillMainPage {
     private final TestContext context;
 
-    private final By emailInput = By.name("username");
+    private final By emailInput = By.name("email");
     private final By passwordInput = By.name("password");
     private final By loginButton = By.xpath("//button[contains(text(), 'Войти в систему')]");
 
@@ -33,6 +33,7 @@ public class SkillMainPage {
     }
 
     public DashboardPage login() {
+        context.driver.get(ConfigurationReader.get("url"));
         emailInput(ConfigurationReader.get("userEmail"));
         enterPassword(ConfigurationReader.get("userPassword"));
         clickLoginButton();
